@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Text Editor</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Text Editor Online Tools</h1>
+        <!-- <p>Create your portfolio website effortlessly!</p> -->
+    </header>
+    <div class="editor-container">
+        <!-- Toolbar -->
+        <div class="toolbar">
+            <button class="btn" onclick="execCmd('bold')"><b>B</b></button>
+            <button class="btn" onclick="execCmd('italic')"><i>I</i></button>
+            <button class="btn" onclick="execCmd('underline')"><u>U</u></button>
+            <select onchange="changeFontSize(this)">
+                <option value="3">Normal</option>
+                <option value="5">Large</option>
+                <option value="7">Very Large</option>
+            </select>
+            <select onchange="changeFontFamily(this)">
+                <option value="Arial">Arial</option>
+                <option value="Courier New">Courier New</option>
+                <option value="Georgia">Georgia</option>
+                <option value="Times New Roman">Times New Roman</option>
+            </select>
+            <button class="btn" onclick="execCmd('justifyLeft')">Left</button>
+            <button class="btn" onclick="execCmd('justifyCenter')">Center</button>
+            <button class="btn" onclick="execCmd('justifyRight')">Right</button>
+            <button class="btn" onclick="insertOrderedList()">OL</button>
+            <button class="btn" onclick="insertUnorderedList()">UL</button>
+            <button class="btn" onclick="execCmd('createLink')">Link</button>
+            <button class="btn" onclick="execCmd('hiliteColor')">Highlight</button>
+            <button class="btn" onclick="changeTextColor()">Text Color</button>
+            <button class="btn" onclick="undoAction()">Undo</button>
+            <button class="btn" onclick="redoAction()">Redo</button>
+            <button class="btn" onclick="document.execCommand('cut')">Cut</button>
+            <button class="btn" onclick="document.execCommand('copy')">Copy</button>
+            <button class="btn" onclick="document.execCommand('paste')">Paste</button>
+            <button class="btn" onclick="saveContent('html')">Save as HTML</button>
+            <button class="btn" onclick="saveContent('txt')">Save as TXT</button>
+        </div>
+
+        <!-- Text Area -->
+        <div class="editor" contenteditable="true" id="editor"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
